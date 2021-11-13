@@ -8,6 +8,7 @@ tf.subtract(A, B)
 tf.matmul(A, B, transpose_a=False, transpose_b=False) 
 # 주의 : tf.matmul(A, B, transpose_b=True) =  tf.matmul(A, tf.transpose(B, ), transpose_b=True) 
 
+tf.math.sqrt(A)
 tf.shape(A) # dimensions of A
 tf.cast(A, tf.float32) # tf.int32
 tf.transpose(A, B) # 축 : 
