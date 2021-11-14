@@ -22,7 +22,7 @@ tf.transpose(A, B) # 축 :
 from tensorflow.keras.callbacks import ModelCheckpoint
 from tensorflow.keras.models import Model, load_model, Sequential
 from tensorflow.keras.layers import Dense, Activation, Dropout, Input, Reshape
-from tensorflow.keras.layers import Conv1D, conv2D, BatchNormalization,
+from tensorflow.keras.layers import Conv1D, Conv2D, BatchNormalization,
 from tensorflow.keras.layers import Masking, TimeDistributed, LSTM, GRU, Bidirectional
 from tensorflow.keras.optimizers import Adam
 
@@ -34,9 +34,13 @@ X = Activation("relu")(X) # tensorflow.keras.layers.ReLU()(X)도 가능
 X = Dropout(rate=dropout_rate)(X)
 
 
+X = Conv2D(filters, kernel_size, strides=(1, 1), padding='valid', activation=None)(X) 
+# padding = 'valid' or 'same'
+
 X = BatchNormalization(axis=-1, momentum=0.99, epsilon=0.001)(X)
 
 X = GRU(units=num_unit, return_sequences=True)(X) # return_sequences = True와 False의 차이
+X = 
 
 ```
 
