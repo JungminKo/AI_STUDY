@@ -55,3 +55,15 @@
       loss = np.sum(np.dot(y_pred-y, y_pred-y))
       return loss
     ```
+      
+      
+ - cross-entropy cost
+    
+    ```python
+    def cross_entropy_cost(y_pred, y): # y_pred : probability vector to label predictions , y : true label vector
+      m = y.shape[1]
+      cost = -1/m*np.sum((np.dot(y, np.log(y_pred).T) + np.dot(1-y, np.log((1-y_pred)).T)))
+      cost = np.squeeze(cost)
+      
+      return cost
+    ```
