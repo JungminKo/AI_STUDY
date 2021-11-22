@@ -7,6 +7,9 @@
 
 ## DL
 ### Basic
+- DeepLearning
+- Tensorflow
+- Pytorch
 
 ### Computer Vision
 
