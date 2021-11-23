@@ -39,3 +39,8 @@ def basic_iou(rect1, rect2) :
     iou = inter_area/union_area
 
     return iou
+
+
+## Non maximum Suppression
+# tf.image.non_max_suppression() https://www.tensorflow.org/api_docs/python/tf/image/non_max_suppression
+# torchvision.ops.batched_nms() https://pytorch.org/vision/stable/ops.html
