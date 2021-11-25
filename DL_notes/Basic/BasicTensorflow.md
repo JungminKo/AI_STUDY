@@ -19,7 +19,7 @@ tf.math.reduce_max(A, axis=None, keepdims=False) # axis 설정 가능
   # keepdims=True이면 length: 1, False이면 length: 0
 
 tf.boolean_mask(A, mask, axis=None) # A:N-D Tensor , mask : K-D boolean tensor , K<=N
-
+tf.gather(params, indices) # tensor params를 indices에 맞게 slicing
 ```
 
 
