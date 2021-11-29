@@ -1,5 +1,6 @@
-### Function
+## Function
 
+### 간단한 tensor 계산
 ```Python
 import tensorflow as tf
 
@@ -22,13 +23,15 @@ tf.boolean_mask(A, mask, axis=None) # A:N-D Tensor , mask : K-D boolean tensor ,
 tf.gather(params, indices) # tensor params를 indices에 맞게 slicing
 ```
 
-
+### tf 자주 사용하는 함수
 ```Python
+# tf v1.14의 경우, from tensorflow.python.keras.layers에서 호출
 
 from tensorflow.keras.callbacks import ModelCheckpoint
 from tensorflow.keras.models import Model, load_model, Sequential
-from tensorflow.keras.layers import Dense, Activation, Dropout, Input, Reshape, Add,  
-from tensorflow.keras.layers import Conv1D, Conv2D, BatchNormalization, Flatten, AveragePooling2D, MaxPooling2D,
+from tensorflow.keras.layers import Dense, Activation, Dropout, Input, Reshape, Add, concatenate 
+from tensorflow.keras.layers import Conv1D, Conv2D, Flatten, BatchNormalization
+from tensorflow.keras.layers import AveragePooling2D, MaxPooling2D, ZeoPadding2Ds
 from tensorflow.keras.layers import Masking, TimeDistributed, LSTM, GRU, Bidirectional
 from tensorflow.keras.optimizers import Adam
 
@@ -58,4 +61,5 @@ X = GRU(units=num_unit, return_sequences=True)(X) # return_sequences = True와 F
 - `tensorflow.keras.layers.Activation('relu')`와 `tensorflow.keras.layers.ReLU` 의 차이?
 
 - `tensorflow.keras.layers.GlobalAveragePooling2D()`과 `tensorflow.keras.layers.AveragePooling2D()`의 차이?
-  GlobalAveragePooling2D는 n개의 channel의 값을 평균하는 반면, AveragePooling2D는 channel별로 stride만큼 이동해가며 pool_size의 값에 대한 평균을 출력
+  - GlobalAveragePooling2D는 n개의 channel의 값을 평균하는 반면, 
+  - AveragePooling2D는 channel별로 stride만큼 이동해가며 pool_size의 값에 대한 평균을 출력
