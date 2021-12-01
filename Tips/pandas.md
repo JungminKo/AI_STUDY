@@ -1,7 +1,7 @@
 ### Pandas Dataframe
 
 
-- convert string to numpy.array in side a DataFrame column
+- convert string to numpy.array inside a DataFrame column
 ```Python
 # df : dataframe  
 
