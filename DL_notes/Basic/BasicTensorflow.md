@@ -12,7 +12,7 @@ tf.matmul(A, B, transpose_a=False, transpose_b=False)
 tf.math.sqrt(A)
 tf.shape(A) # dimensions of A
 tf.cast(A, tf.float32) # tf.int32
-tf.transpose(A, B) # 축 : 
+tf.transpose(A, perm) # perm = None : it is set to (n-1...0), where n is the rank of the input tensor
 
 tf.math.argmax(A, axis=None) # axis 설정 가능
 tf.math.reduce_max(A, axis=None, keepdims=False) # axis 설정 가능 
