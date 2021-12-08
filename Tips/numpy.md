@@ -15,6 +15,14 @@ x[:, np.newaxis] # array([[0], [1], [2]])  # shape : (3,1)
 x[np.newaxis, :] # array([[0, 1, 2]])  # shape : (1,3)
 ```
 
+2. 축바꾸기
+```Python
+x = np.arange(24).reshape(2,3,4)
+np.transpose(x) # x.T # shape : (4,3,2)
+np.swapaxes(x, 0, 1) # shape : (3,2,4)
+np.swapaxes(x, 0, 2) # shape : (4,3,2)
+np.swapaxes(x, 1, 2) # shape : (2,4,3)
+```
 
 
 ### 기타
