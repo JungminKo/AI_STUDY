@@ -8,11 +8,17 @@
 
 
 ### to expand the dimensions
-1. np.newaxis
+1. np.newaxis / np.expand_dims
 ```Python
 x = np.arange(3) # array([0, 1, 2]) # shape : (3,)
+
+# np.newaxis
 x[:, np.newaxis] # array([[0], [1], [2]])  # shape : (3,1)
 x[np.newaxis, :] # array([[0, 1, 2]])  # shape : (1,3)
+
+# np.expand_dims
+np.expand_dims(x, axis=0) # array([[0, 1, 2]])  # shape : (1,3)
+np.expand_dims(x, axis=1) # array([[0], [1], [2]])  # shape : (3,1)
 ```
 
 2. 축바꾸기
