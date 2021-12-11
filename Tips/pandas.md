@@ -8,6 +8,17 @@ df.rename(columns={0: "x", 1: "y", 2: "z"}, inplace=True)
 df.rename(index={0: "x", 1: "y", 2: "z"})
 df.rename({1: 2, 2: 4}, axis='index')
 ```
+- check null data 
+```Python
+# column 별로 null data 개수 세기
+df.isnull().sum(axis=0)
+
+# null data 시각화하기
+import missingno as msno
+msno.matrix(df=df, figsize=(8,8), color(0.8, 0.5, 0.2) # null data의 위치는 흰색으로 시각화
+msno.bar(df=df, figsize=(8, 8), color=(0.8, 0.5, 0.2)) # 전체 개수 중 몇 %가 null data인지를 시각화
+```
+
 - save csv with korean  
 ```Python
 df.to_csv("./data.csv", index=False, encoding='utf-8-sig')
