@@ -41,3 +41,8 @@ import ast
 df["array"] = df["array"].apply(lambda x: np.array(ast.literal_eval(x)))
 
 ```
+
+- compute a simpe cross tabulation of two(or more) factors
+```Python
+pd.crosstab(df['col_name1'], df['col_name2'], margins=True) 
+```
