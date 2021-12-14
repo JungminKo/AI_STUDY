@@ -17,9 +17,9 @@ df.drop('col_name', axis=1) # drop column # can put a list to drop columns
 
 **- to select a subset of the DataFrame’s columns based on the column dtypes**
 ```Python
-df.select_dtypes(include='object').columns # parameters : include, exclude 
-df.select_dtypes(include='number').columns
-df.select_dtypes(include='datetime').columns
+df.select_dtypes(include='object') # parameters : include, exclude 
+df.select_dtypes(include='number')
+df.select_dtypes(include='datetime') # 끝에 .columns을 붙이면 해당하는 column을 뽑아낼 수 있음 
 ```
 
 **- to check null data**
