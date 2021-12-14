@@ -1,5 +1,5 @@
 ### Pandas Dataframe
-- change the name of column
+**- to change the name of column**
 ```Python
 # column 이름 바꾸기
 df.rename(columns={0: "x", 1: "y", 2: "z"}, inplace=True)
@@ -8,10 +8,28 @@ df.rename(columns={0: "x", 1: "y", 2: "z"}, inplace=True)
 df.rename(index={0: "x", 1: "y", 2: "z"})
 df.rename({1: 2, 2: 4}, axis='index')
 ```
-- check null data 
+
+**- to drop specified labels from rows or columns**
+```Python
+df.drop('index', axis=0) # drop row
+df.drop('col_name', axis=1) # drop column # can put a list to drop columns
+```
+
+**- to select a subset of the DataFrame’s columns based on the column dtypes**
+```Python
+df.select_dtypes(include='object').columns # parameters : include, exclude 
+df.select_dtypes(include='number').columns
+df.select_dtypes(include='datetime').columns
+```
+
+**- to check null data**
 ```Python
 # column 별로 null data 개수 세기
-df.isnull().sum(axis=0)
+df.isnull().sum()
+
+# null data가 있는 columns만 보기
+is_missing = df.isnull().sum()>0
+df.isnull().sum()[is_missing]
 
 # null data 시각화하기
 import missingno as msno
@@ -19,12 +37,12 @@ msno.matrix(df=df, figsize=(8,8), color(0.8, 0.5, 0.2) # null data의 위치는 
 msno.bar(df=df, figsize=(8, 8), color=(0.8, 0.5, 0.2)) # 전체 개수 중 몇 %가 null data인지를 시각화
 ```
 
-- save csv with korean  
+**- to save csv with korean**  
 ```Python
 df.to_csv("./data.csv", index=False, encoding='utf-8-sig')
 ```
 
-- randomly sample from DataFrame
+**- to randomly sample from DataFrame**
 ```Python
 df.sample(n=None, # default : n, Number of items from axis to return. Cannot be used with frac.
           frac=None, # default : None, Fraction of axis items to return. Cannot be used with n.
@@ -35,14 +53,18 @@ df.sample(n=None, # default : n, Number of items from axis to return. Cannot be 
          )
 ```
 
-- convert string to numpy.array inside a DataFrame column
+**- to convert string to numpy.array inside a DataFrame column**
 ```Python
 import ast
 df["array"] = df["array"].apply(lambda x: np.array(ast.literal_eval(x)))
 
 ```
 
-- compute a simpe cross tabulation of two(or more) factors
+**- to compute a simpe cross tabulation of two(or more) factors**
 ```Python
 pd.crosstab(df['col_name1'], df['col_name2'], margins=True) 
 ```
+
+### Extra
+- `df.describe().T`를 하면 더 많은 column에 대해서 볼 수 있으므로 편함
+- `X_train.describe(include=np.object).T`를 하면 모든 object columns에 대해 describe를 볼 수 있음
