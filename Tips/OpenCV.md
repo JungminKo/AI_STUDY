@@ -2,8 +2,8 @@
 - Perspective Transformation
 
 ```Python
-pts1 # 4 points
-pts2 # 4 points
+pts1 # 4 points topLeft, bottomRight, topRight, bottomLeft
+pts2 # 4 points topLeft, bottomRight, topRight, bottomLeft
 
 matrix = cv2.getPerspectiveTransform(pts1, pts2)
 src = cv2.warpPerspective(img, matrix, (width, height))
