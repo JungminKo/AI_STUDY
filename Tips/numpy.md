@@ -30,6 +30,11 @@ np.swapaxes(x, 0, 2) # shape : (4,3,2)
 np.swapaxes(x, 1, 2) # shape : (2,4,3)
 ```
 
+3. np.random
+```Python
+# Create an array of the given shape and populate it with random samples from a uniform distribution over [0, 1).
+np.random.rand(row, col)
+``` 
 
 ### 기타
 - `np.int0()` : numpy 타입을 int64로 변환
