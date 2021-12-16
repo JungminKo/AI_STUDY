@@ -9,7 +9,7 @@ def salt_pepper_noise(image, prob):
     src = image.copy().astype('uint8')
     thres = 1-prob
     
-    mask = np.random.rand(*img.shape[:2])
+    mask = np.random.rand(*image.shape[:2])
     src[mask<prob]=0
     src[mask>thres]=255
     
