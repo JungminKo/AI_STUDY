@@ -25,3 +25,24 @@ le = LabelEncoder()
 y_train = le.fit_transform(y_train)
 y_test = le.transform(y_test)
 ```
+
+- metrics
+```Python
+from sklearn.metrics import classification_report
+
+classification_report(y_test, y_pred, target_names=labels) 
+# The reported averages include macro average, weighted average, and sample average,Micro average
+
+
+# Cohen’s kappa: a statistic that measures inter-annotator agreement.
+from sklearn.metrics import cohen_kappa_score
+cohen_kappa_score(y_test, y_pred)
+
+# Matthews correlation coefficient (MCC)
+from sklearn.metrics import matthews_corrcoef
+matthews_corrcoef(y_test, y_pred)
+
+# Log loss, aka logistic loss or cross-entropy loss
+from sklearn.metrics import log_loss
+log_loss(y_test, y_preb_probs)
+```
