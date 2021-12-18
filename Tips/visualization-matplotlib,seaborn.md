@@ -10,6 +10,7 @@ df['col_name'].plot.bar(ax=ax[0]) #
 ax[0].set_ylabel('ylabel')
 
 ax[1].se_title('graph_2', y= 1.02)
+plt.subplots_adjust(wspace=0.2, hspace=0.5)
 ```
 
 - Generate a pie plot
@@ -31,6 +32,10 @@ import seaborn as sns
 ```Python
 sns.countplot(x='col_name', hue='col_name2', data=df) # hue variables will determine how the data are plotted.
 ```
+- Plot univariate or bivariate histograms to show distributions of datasets
+```Python
+sns.histplot(data=df['col_name']) 
+```
 
 - Draw a categorical plot onto a FacetGrid
 ```Python
@@ -40,4 +45,9 @@ sns.factorplot(x='col_name1', y='col_name2', data=df) # hue='col_name3', col='co
 - Plot univariate or bivariate distributions using kernel density estimation
 ```Python
 sns.kdeplot(data=df, x = 'col_name')
+```
+- Draw a combination of boxplot and kernel density estimate
+```Python
+sns.violinplot(x='col_name1', y='col_name2', hue='col_name3', data=df, scale='count', split=True) 
+# scale : {“area”, “count”, “width”}
 ```
