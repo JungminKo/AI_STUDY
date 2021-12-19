@@ -1,6 +1,11 @@
 # matplotlib.pyplot 
 ```Python
 import matplotlib.pyplot as plt
+
+%matplotlib inline 
+# the output of plotting commands is displayed inline within frontends like the Jupyter notebook, 
+# directly below the code cell that produced it. 
+# The resulting plots will then also be stored in the notebook document.
 ```
 - Basic
 ```Python
@@ -36,6 +41,12 @@ sns.countplot(x='col_name', hue='col_name2', data=df) # hue variables will deter
 ```Python
 sns.histplot(data=df['col_name']) 
 ```
+
+- Plot rectangular data as a color-encoded matrix.
+```Python
+sns.heatmap(data)
+```
+
 
 - Draw a categorical plot onto a FacetGrid
 ```Python
