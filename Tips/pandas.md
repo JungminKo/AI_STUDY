@@ -1,4 +1,20 @@
-### Pandas Dataframe
+### Series
+**- to map values of Series according to input correspondence**
+ ```Python
+ s.map({'cat': 'kitten', 'dog': 'puppy'})
+ s.map(lambda i: np.log(i) if i>0 else 0)
+ ```
+** - to extract capture groups in the regex pat as columns in a DataFrame**
+```Python
+s.str.extract(r'([ab])(\d)') 
+```
+
+- to fill NA/NaN values using the specified method
+'''Python
+s.fillna(5, inplace=False) # inplace = True/False
+'''
+
+### Dataframe
 **- to change the name of column**
 ```Python
 # column 이름 바꾸기
@@ -11,7 +27,7 @@ df.rename({1: 2, 2: 4}, axis='index')
 
 **- to drop specified labels from rows or columns**
 ```Python
-df.drop('index', axis=0) # drop row
+df.drop('index', axis=0, inplace=False) # drop row 
 df.drop('col_name', axis=1) # drop column # can put a list to drop columns
 ```
 
@@ -26,6 +42,8 @@ df.select_dtypes(include='datetime') # 끝에 .columns을 붙이면 해당하는
 ```Python
 # column 별로 null data 개수 세기
 df.isnull().sum()
+# column 별로 null data가 한개라도 있는지 확인
+df.isnull().any() # 결과 : True/False
 
 # null data가 있는 columns만 보기
 is_missing = df.isnull().sum()>0
@@ -63,6 +81,20 @@ df["array"] = df["array"].apply(lambda x: np.array(ast.literal_eval(x)))
 **- to compute a simpe cross tabulation of two(or more) factors**
 ```Python
 pd.crosstab(df['col_name1'], df['col_name2'], margins=True) 
+```
+
+**- to apply a function along an axis of the DataFrame**
+  
+  - ex. to change continuous variables to categorical variables
+```Python
+def category_age(x):
+    if x<10:
+          return 0
+    elif x<20:
+          return 1
+    else:
+          reuturn 2
+df['col_names_cate'] = df['col_names'].apply(category_age
 ```
 
 ### Extra
