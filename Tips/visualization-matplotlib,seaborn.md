@@ -37,6 +37,12 @@ import seaborn as sns
 ```Python
 sns.countplot(x='col_name', hue='col_name2', data=df) # hue variables will determine how the data are plotted.
 ```
+
+- Show point estimates and confidence intervals as rectangular bars
+```Python
+sns.barplot(x='col_name1', y='col_name2', data=df)
+```
+
 - Plot univariate or bivariate histograms to show distributions of datasets
 ```Python
 sns.histplot(data=df['col_name']) 
@@ -45,18 +51,24 @@ sns.histplot(data=df['col_name'])
 - Plot rectangular data as a color-encoded matrix.
 ```Python
 sns.heatmap(data)
+
+# create correlation matrix
+sns.heatmap(df[['col_name1', 'col_name2', 'col_name3', 'col_name4', 'col_name5']].corr(), 
+                annot=True, fmt=".2f", cmap='coolwarm')
 ```
 
 
 - Draw a categorical plot onto a FacetGrid
 ```Python
-sns.factorplot(x='col_name1', y='col_name2', data=df) # hue='col_name3', col='col_name3'
+sns.factorplot(x='col_name1', y='col_name2', data=df, size=6) 
+# hue='col_name3', col='col_name3', # kind='bar'
 ```
 
 - Plot univariate or bivariate distributions using kernel density estimation
 ```Python
 sns.kdeplot(data=df, x = 'col_name')
 ```
+
 - Draw a combination of boxplot and kernel density estimate
 ```Python
 sns.violinplot(x='col_name1', y='col_name2', hue='col_name3', data=df, scale='count', split=True) 
