@@ -36,7 +36,6 @@ from tensorflow.keras.layers import Masking, TimeDistributed, LSTM, GRU, Bidirec
 from tensorflow.keras.optimizers import Adam
 
 
-
 model = Model(inputs = input, outputs = output)
 
 
@@ -54,8 +53,15 @@ X = Add()([shortcut, X]
 
 X = GRU(units=num_unit, return_sequences=True)(X) # return_sequences = True와 False의 차이
 
+
 ```
 
 - `tensorflow.keras.layers.GlobalAveragePooling2D()`과 `tensorflow.keras.layers.AveragePooling2D()`의 차이?
   - GlobalAveragePooling2D는 n개의 channel의 값을 평균하는 반면, 
   - AveragePooling2D는 channel별로 stride만큼 이동해가며 pool_size의 값에 대한 평균을 출력
+
+- clear session
+```Python
+import tensorflow.keras.backend as K
+K.clear_session() # useful when you're creating multiple models in succession, 
+```
