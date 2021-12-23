@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ### Logistic Loss
 
 
@@ -9,7 +9,7 @@
 
 
 ### Gradient Descent
-=======
+
 ## 
 
 
@@ -79,4 +79,4 @@
       
       return cost
     ```
->>>>>>> cd3123d871e395b96015c32296e6fca457fcb9c5
+
