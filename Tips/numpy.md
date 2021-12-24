@@ -34,6 +34,12 @@ np.swapaxes(x, 1, 2) # shape : (2,4,3)
 ```Python
 # Create an array of the given shape and populate it with random samples from a uniform distribution over [0, 1).
 np.random.rand(row, col)
+
+# Generates a random sample from a given 1-D array
+np.random.choie(a, size=None, p=None) # a : 1-D array-like or int - int : np.arange(a)
+
+# Return random integers from low (inclusive) to high (exclusive)
+np.random.randint(low, high=None, size=None) # if high=None, 0부터 low-1까지의 숫자중 sampling
 ``` 
 
 ### 기타
@@ -41,7 +47,12 @@ np.random.rand(row, col)
 - `np.r_[]` : 배열을 왼쪽에서 오른쪽으로 붙임
   - ex. `df.iloc[:, np.r_[2, 3:5, 10]` 과 같이 dataframe의 iloc를 범위 지정해서 접근할 때 편함
 
-
-- `np.where(condition)`: 조건(condition)에 맞는 인덱스 모두 반환
-  - ***주의*** : index는 반환되는 tuple의 첫번째 요소이므로 [0]번째 값에 접근해야 함
-  - ex. 배열 v의 값이 달라지는 부분 파악하기 : `np.where(v[:-1] != v[1:])[0]`
+- `np.argwhere(condition)` : 조건(condition)에 맞는 인덱스 모두 반환 
+  - ex. 배열 v의 값이 달라지는 부분 파악하기 : `np.argwhere(v[:-1] != v[1:])`  # shape: (n, 1)
+  
+- `np.where(condition, x, y)`: 조건(condition)에 맞는 인덱스 모두 반환
+  - `np.argwhere`처럼 condition만 주어질 수도 있음
+    - 그러면 `np.asarray(condition).nonzero()` 로 사용되는 것이 좋음
+    - ***주의*** : index는 반환되는 tuple의 첫번째 요소이므로 [0]번째 값에 접근해야 함
+    - ex. 배열 v의 값이 달라지는 부분 파악하기 : `np.where(v[:-1] != v[1:])[0]` # shape : (n, )
+  - `np.where(a<4, a, 10*a)` : a<4이면 a, 아니면 10 * a로 값을 대체하여 array 반환
