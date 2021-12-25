@@ -2,6 +2,7 @@
 **- to map values of Series according to input correspondence**
  ```Python
  s.map({'cat': 'kitten', 'dog': 'puppy'})
+ df['sex'].map({"male":0, "female":1})
  s.map(lambda i: np.log(i) if i>0 else 0)
  ```
 ** - to extract capture groups in the regex pat as columns in a DataFrame**
