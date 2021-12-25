@@ -61,7 +61,8 @@ sns.heatmap(df[['col_name1', 'col_name2', 'col_name3', 'col_name4', 'col_name5']
 - Draw a categorical plot onto a FacetGrid
 ```Python
 sns.factorplot(x='col_name1', y='col_name2', data=df, size=6) 
-# hue='col_name3', col='col_name3', # kind='bar'
+# hue='col_name3', col='col_name3', 
+# kind : {“point”, “bar”, “strip”, “swarm”, “box”, “violin”, or “boxen”}, default="strip"
 ```
 
 - Plot univariate or bivariate distributions using kernel density estimation
