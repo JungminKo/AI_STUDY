@@ -2,6 +2,9 @@
 ```Python
 import matplotlib.pyplot as plt
 
+plt.style.use("seaborn")
+sns.set(font_scale=1.5, style='white') # style : 'whitegrid'
+
 %matplotlib inline 
 # the output of plotting commands is displayed inline within frontends like the Jupyter notebook, 
 # directly below the code cell that produced it. 
