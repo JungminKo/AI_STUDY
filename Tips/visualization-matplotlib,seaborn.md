@@ -24,6 +24,7 @@ plt.subplots_adjust(wspace=0.2, hspace=0.5)
 - Generate a pie plot
 ```Python
 df['col_name'].plot.pie(autopct='%1.1f%%', shadow=True, explode = [0.1, 0.1, 0.1, 0.1] )  
+     # textprops={'fontsize': 20} # adjusting fontsize
      # explode : len(x) array which specifies the fraction of the radius with which to offset each wedge 
 ```
 - Generate a vertical bar plot
