@@ -1,21 +1,26 @@
-### Series
+## Series
 **- to map values of Series according to input correspondence**
  ```Python
  s.map({'cat': 'kitten', 'dog': 'puppy'})
  df['sex'].map({"male":0, "female":1})
  s.map(lambda i: np.log(i) if i>0 else 0)
  ```
-** - to extract capture groups in the regex pat as columns in a DataFrame**
+**- to extract capture groups in the regex pat as columns in a DataFrame**
 ```Python
 s.str.extract(r'([ab])(\d)') 
 ```
-
-- to fill NA/NaN values using the specified method
-'''Python
+**- to fill NA/NaN values using the specified method**
+```Python
 s.fillna(5, inplace=False) # inplace = True/False
-'''
+```
 
-### Dataframe
+##  Dataframe
+**- to print a concise summary of a DataFrame** : `df.info()`
+
+**- to generate descriptive statistics** : `df.describe()`
+  - `df.describe().T`를 하면 더 많은 column에 대해서 볼 수 있으므로 편함
+  - `df.describe(include=np.object).T`를 하면 모든 object columns에 대해 describe를 볼 수 있음
+
 **- to change the name of column**
 ```Python
 # column 이름 바꾸기
@@ -98,6 +103,3 @@ def category_age(x):
 df['col_names_cate'] = df['col_names'].apply(category_age
 ```
 
-### Extra
-- `df.describe().T`를 하면 더 많은 column에 대해서 볼 수 있으므로 편함
-- `X_train.describe(include=np.object).T`를 하면 모든 object columns에 대해 describe를 볼 수 있음
