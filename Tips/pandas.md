@@ -20,6 +20,7 @@ s.fillna(5, inplace=False) # inplace = True/False
 **- to generate descriptive statistics** : `df.describe()`
   - `df.describe().T`를 하면 더 많은 column에 대해서 볼 수 있으므로 편함
   - `df.describe(include=np.object).T`를 하면 모든 object columns에 대해 describe를 볼 수 있음
+    - `unique` 로 categorical variable인지 여부 확인 가능
 
 **- to change the name of column**
 ```Python
@@ -64,6 +65,11 @@ msno.bar(df=df, figsize=(8, 8), color=(0.8, 0.5, 0.2)) # 전체 개수 중 몇 %
 **- to save csv with korean**  
 ```Python
 df.to_csv("./data.csv", index=False, encoding='utf-8-sig')
+```
+
+**- to group DataFrame using a mapper or by a Series of columns** : `groupby`
+```Python
+df.groupby('col1', as_index=True).count() # .sum(), .mean(), .max(), .min()
 ```
 
 **- to randomly sample from DataFrame**
