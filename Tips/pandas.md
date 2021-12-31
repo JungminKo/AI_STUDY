@@ -70,6 +70,7 @@ df.to_csv("./data.csv", index=False, encoding='utf-8-sig')
 **- to group DataFrame using a mapper or by a Series of columns** : `groupby`
 ```Python
 df.groupby('col1', as_index=True).count() # .sum(), .mean(), .max(), .min()
+df[['col1','col2']].groupby('col1', as_index=True).count()
 ```
 
 **- to randomly sample from DataFrame**
