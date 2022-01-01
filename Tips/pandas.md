@@ -93,7 +93,7 @@ df["array"] = df["array"].apply(lambda x: np.array(ast.literal_eval(x)))
 
 **- to compute a simpe cross tabulation of two(or more) factors**
 ```Python
-pd.crosstab(df['col_name1'], df['col_name2'], margins=True) 
+pd.crosstab(df['col_name1'], df['col_name2'], margins=True) #.style.background_gradient(cmap='summer_r')
 ```
 
 **- to apply a function along an axis of the DataFrame**
