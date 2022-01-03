@@ -9,10 +9,9 @@
 ```Python
 s.str.extract(r'([ab])(\d)') 
 ```
-**- to fill NA/NaN values using the specified method**
-```Python
-s.fillna(5, inplace=False) # inplace = True/False
-```
+**- to fill NA/NaN values using the specified method** : `s.fillna(5, inplace=False)`
+
+**- to return a Series containing counts of unique values** : `s.value_counts()`
 
 ##  Dataframe
 **- to print a concise summary of a DataFrame** : `df.info()`
