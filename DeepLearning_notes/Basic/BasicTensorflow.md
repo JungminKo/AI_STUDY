@@ -32,7 +32,7 @@ from tensorflow.keras.models import Model, load_model, Sequential
 from tensorflow.keras.layers import Dense, Activation, Dropout, Input, Reshape, Add, concatenate 
 from tensorflow.keras.layers import Conv1D, Conv2D, Flatten, BatchNormalization
 from tensorflow.keras.layers import AveragePooling2D, MaxPooling2D, ZeoPadding2Ds
-from tensorflow.keras.layers import Masking, TimeDistributed, LSTM, GRU, Bidirectional
+from tensorflow.keras.layers import Masking, TimeDistributed, LSTM, GRU, CuDNNGRU, Bidirectional
 from tensorflow.keras.optimizers import Adam
 
 
@@ -51,7 +51,9 @@ X = BatchNormalization(axis=-1, momentum=0.99, epsilon=0.001)(X)
 X = Add()([shortcut, X]
 
 
-X = GRU(units=num_unit, return_sequences=True)(X) # return_sequences = True와 False의 차이
+# return_sequences : True/False. Whether to return the last output in the output sequence, or the full sequence.
+X = GRU(units=num_unit, return_sequences=True)(X) 
+X = CuDNNGRU(units=num_unit, return_sequences=True)(X) # Fast GRU implementation backed by cuDNN
 
 
 ```
