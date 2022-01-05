@@ -1,4 +1,5 @@
 # matplotlib.pyplot 
+- Setting
 ```Python
 import matplotlib.pyplot as plt
 
@@ -10,14 +11,21 @@ sns.set(font_scale=1.5, style='white') # style : 'whitegrid'
 # directly below the code cell that produced it. 
 # The resulting plots will then also be stored in the notebook document.
 ```
+
 - Basic
 ```Python
+# set title
+plt.title("title", y=1.05)
+```
+
+- About subplots
+```Python
 f, ax = plt.subplots(1,2, figsize=(18,8))
-ax[0].set_title('graph_1', y= 1.02) # y: position of title
-df['col_name'].plot.bar(ax=ax[0]) #  
+df['col_name'].plot.bar(ax=ax[0]) 
+ax[0].set_title('graph_1', y= 1.05) # y: position of title
 ax[0].set_ylabel('ylabel')
 
-ax[1].se_title('graph_2', y= 1.02)
+ax[1].set_title('graph_2', y= 1.05)
 plt.subplots_adjust(wspace=0.2, hspace=0.5)
 ```
 
@@ -36,6 +44,11 @@ df['col_name'].plot.bar()
 ```Python
 import seaborn as sns
 ```
+> **_seabron.catplot 계열/ factorplot은_** `plt.subplot`의 ax와 함께 사용될 수 없다! 
+> [공식문서](https://seaborn.pydata.org/generated/seaborn.catplot.html#seaborn.catplot)  / 
+> [해결방법](https://stackoverflow.com/questions/54959764/seaborn-factorplot-generates-extra-empty-plots-below-actual-plot)
+> - ex. barplot(), violinplot(), boxenplot(), ~~countplot()~~ 등등 
+> - 반면, 가능한 목록 : heatmap(), countplot(), 
 
 - Show the **counts of observations** in each categorical bin using bars
 ```Python
@@ -58,7 +71,7 @@ sns.heatmap(data)
 
 # create correlation matrix
 sns.heatmap(df[['col_name1', 'col_name2', 'col_name3', 'col_name4', 'col_name5']].corr(), 
-                annot=True, fmt=".2f", cmap='coolwarm')
+                annot=True, linewidths=0.1, vmax=1.0, fmt=".2f", cmap='coolwarm', annot_kws={'size':16})
 ```
 
 
