@@ -12,13 +12,13 @@ sns.set(font_scale=1.5, style='white') # style : 'whitegrid'
 # The resulting plots will then also be stored in the notebook document.
 ```
 
-- Basic
+- Plots
 ```Python
 # set title
 plt.title("title", y=1.05)
 ```
 
-- About subplots
+- Subplots
 ```Python
 f, ax = plt.subplots(1,2, figsize=(18,8))
 df['col_name'].plot.bar(ax=ax[0]) 
