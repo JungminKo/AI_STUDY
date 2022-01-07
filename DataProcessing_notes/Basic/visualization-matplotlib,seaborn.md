@@ -38,27 +38,30 @@ df['col_name'].plot.pie(autopct='%1.1f%%', shadow=True, explode = [0.1, 0.1, 0.1
 - Generate a vertical bar plot
 ```Python
 df['col_name'].plot.bar()
+df['col_name'].value_counts().plot.bar()
 ```
 
 # seaborn
 ```Python
 import seaborn as sns
 ```
-> **_seabron.catplot 계열/ factorplot은_** `plt.subplot`의 ax와 함께 사용될 수 없다! 
-> [공식문서](https://seaborn.pydata.org/generated/seaborn.catplot.html#seaborn.catplot)  / 
-> [해결방법](https://stackoverflow.com/questions/54959764/seaborn-factorplot-generates-extra-empty-plots-below-actual-plot)
-> - ex. barplot(), violinplot(), boxenplot(), ~~countplot()~~ 등등 
-> - 반면, 가능한 목록 : heatmap(), countplot(), 
-
-- Show the **counts of observations** in each categorical bin using bars
-```Python
-sns.countplot(x='col_name', hue='col_name2', data=df) # hue variables will determine how the data are plotted.
-```
-
-- Show point estimates and confidence intervals as rectangular bars
-```Python
-sns.barplot(x='col_name1', y='col_name2', data=df)
-```
+## seabron.catplot : drawing categorical plots
+- **scatterplots** : `stripplot()`
+- **distribution plots** 
+     - Draw a combination of boxplot and kernel density estimate
+          ```Python
+          sns.violinplot(x='col_name1', y='col_name2', hue='col_name3', data=df, scale='count', split=True) 
+          # scale : {“area”, “count”, “width”}
+          ```
+- **estimate plots**
+     - Show **point estimates and confidence intervals** as rectangular bars
+          ```Python
+          sns.barplot(x='col_name1', y='col_name2', data=df)
+          ```
+     - Show the **counts of observations** in each categorical bin using bars
+          ```Python
+          sns.countplot(x='col_name', hue='col_name2', data=df) # hue variables will determine how the data are plotted.
+          ```
 
 - Plot univariate or bivariate histograms to show distributions of datasets
 ```Python
@@ -76,6 +79,10 @@ sns.heatmap(df[['col_name1', 'col_name2', 'col_name3', 'col_name4', 'col_name5']
 
 
 - Draw a categorical plot onto a FacetGrid
+> **_factorplot은_** `plt.subplot`의 ax와 함께 사용될 수 없다! 라고 stackoverflow에 나와있음
+> 
+> [해결방법](https://stackoverflow.com/questions/54959764/seaborn-factorplot-generates-extra-empty-plots-below-actual-plot)
+
 ```Python
 sns.factorplot(x='col_name1', y='col_name2', data=df, size=6) 
 # hue='col_name3', col='col_name3', 
@@ -87,8 +94,4 @@ sns.factorplot(x='col_name1', y='col_name2', data=df, size=6)
 sns.kdeplot(data=df, x = 'col_name')
 ```
 
-- Draw a combination of boxplot and kernel density estimate
-```Python
-sns.violinplot(x='col_name1', y='col_name2', hue='col_name3', data=df, scale='count', split=True) 
-# scale : {“area”, “count”, “width”}
-```
+
