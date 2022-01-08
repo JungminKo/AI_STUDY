@@ -45,7 +45,8 @@ df['col_name'].value_counts().plot.bar()
 ```Python
 import seaborn as sns
 ```
-## seabron.catplot : drawing categorical plots
+## Plotting with categorical variable 
+ex. seabron.catplot
 - **scatterplots** : `stripplot()`
 - **distribution plots** 
      - Draw a combination of boxplot and kernel density estimate
@@ -62,7 +63,23 @@ import seaborn as sns
           ```Python
           sns.countplot(x='col_name', hue='col_name2', data=df) # hue variables will determine how the data are plotted.
           ```
+     - Show **point estimates and confidence intervals** using scatter plot glyphs
+          ```Python
+          sns.pointplot(x='col_name1', y='col_name2', hue='col_name3', data=df)
+          ```
+- Draw a categorical plot onto a FacetGrid
+> **_factorplot은_** `plt.subplot`의 ax와 함께 사용될 수 없다! 라고 stackoverflow에 나와있음
+> 
+> [해결방법](https://stackoverflow.com/questions/54959764/seaborn-factorplot-generates-extra-empty-plots-below-actual-plot)
 
+```Python
+sns.factorplot(x='col_name1', y='col_name2', data=df, size=6) 
+# hue='col_name3', col='col_name3', 
+# kind : {“point”, “bar”, “strip”, “swarm”, “box”, “violin”, or “boxen”}, default="strip"
+```
+
+
+## Plotting with continuous variable 
 - Plot univariate or bivariate histograms to show distributions of datasets
 ```Python
 sns.histplot(data=df['col_name']) 
@@ -78,16 +95,6 @@ sns.heatmap(df[['col_name1', 'col_name2', 'col_name3', 'col_name4', 'col_name5']
 ```
 
 
-- Draw a categorical plot onto a FacetGrid
-> **_factorplot은_** `plt.subplot`의 ax와 함께 사용될 수 없다! 라고 stackoverflow에 나와있음
-> 
-> [해결방법](https://stackoverflow.com/questions/54959764/seaborn-factorplot-generates-extra-empty-plots-below-actual-plot)
-
-```Python
-sns.factorplot(x='col_name1', y='col_name2', data=df, size=6) 
-# hue='col_name3', col='col_name3', 
-# kind : {“point”, “bar”, “strip”, “swarm”, “box”, “violin”, or “boxen”}, default="strip"
-```
 
 - Plot univariate or bivariate distributions using kernel density estimation
 ```Python
