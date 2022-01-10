@@ -21,6 +21,7 @@ rc('font',family = font_name)
 
 ### Plots
 - set title : `plt.title("title", y=1.05)`
+- legend : `plt.legend(["legend1", "legend2"])`
 
 ### Subplots
 - **Create a figure and a set of subplots** : `f, ax = plt.subplots(1,2, figsize=(18,8))`
@@ -71,6 +72,7 @@ import seaborn as sns
                ```Python
                sns.violinplot(x='col_name1', y='col_name2', hue='col_name3', data=df, scale='count', split=True) 
                # scale : {“area”, “count”, “width”}
+               # can be used with numerical variables ex. age, height
                ```
      - **estimate plots**
           - Show **point estimates and confidence intervals** as rectangular bars
@@ -87,7 +89,7 @@ import seaborn as sns
                ```
 
 
-## Plotting with numerical variable 
+## Plotting with numerical/quantitative/continuous variable 
 - distribution plots 
      - figure-level interface : `sns.displot()` # kind : {"hist", "kde", "ecdf}
      - axes-level function
@@ -98,8 +100,11 @@ import seaborn as sns
           - Plot univariate or bivariate distributions using kernel density estimation
                ```Python
                sns.kdeplot(data=df, x = 'col_name')
+               
+               # categorical variable (ex.target variable) 값별로 kde 그려서 분포 비교하기
+               sns.kdeplot(data=df[df['categorical']==value]['col_name'])
                ```
-
+- `sns.violinplot()`
 - Plot rectangular data as a color-encoded matrix.
 ```Python
 sns.heatmap(data)
