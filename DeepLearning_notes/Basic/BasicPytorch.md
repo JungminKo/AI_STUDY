@@ -1,5 +1,15 @@
 
-# 
+### Check GPU
+```Python
+import torch
+
+torch.cuda.is_available() # >>> True
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print('Using device:', device) # >>> 'cuda'
+```
+
+### 
+
 ```Python
 import torch
 import torch.nn as nn
@@ -19,10 +29,13 @@ nn.ModuleList([nn.Linear(10, 10) for i in range(10)])
 ```
 
 ### reshape
-```Python
-torch.view(shape) # View tensor shares the same underlying data with its base tensor 
-```
-
+- `tensor.view(shape)` 
+  - View tensor shares the same underlying data with its base tensor
+- `torch.squeeze(input, dim=None)`
+  - Returns a tensor with all the dimensions of input of size 1 removed
+- `torch.unsqueeze(input, dim)`
+  - Returns a new tensor with a dimension of size one inserted at the specified position
+  
 - `torch.roll()`  
   - Roll the tensor along the given dimension(s). 
   - Elements that are shifted beyond the last position are re-introduced at the first position. 
