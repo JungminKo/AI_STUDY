@@ -65,3 +65,14 @@ nn.ModuleList([nn.Linear(10, 10) for i in range(10)])
            
            return image, label
    ```
+   
+### Loss
+```Python
+torch.nn.BCELoss() # BCELoss : Binary Cross Entropy Loss
+
+```
+
+### Optimizer
+```Python
+torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+```
