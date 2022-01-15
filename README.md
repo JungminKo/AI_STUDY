@@ -7,6 +7,7 @@
   - [pandas](https://github.com/JungminKo/AI_STUDY/blob/main/DataProcessing_notes/Basic/pandas.md)
   - [OpenCV](https://github.com/JungminKo/AI_STUDY/blob/main/DataProcessing_notes/Basic/OpenCV.md)
   - [visualization - matplotlib / seaborn](https://github.com/JungminKo/AI_STUDY/blob/main/DataProcessing_notes/Basic/visualization-matplotlib%2Cseaborn.md)
+  - [pillow](https://github.com/JungminKo/AI_STUDY/blob/main/DataProcessing_notes/Basic/PIL.md)
 
 
 ## Machine Learning (except Deep Learning)
