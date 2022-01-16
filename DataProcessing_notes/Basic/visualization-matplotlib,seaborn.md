@@ -22,6 +22,7 @@ rc('font',family = font_name)
 ### Plots
 - set title : `plt.title("title", y=1.05)`
 - legend : `plt.legend(["legend1", "legend2"])`
+- save : `plt.savefig('./fig.png')`
 
 ### Subplots
 - **Create a figure and a set of subplots** : `f, ax = plt.subplots(1,2, figsize=(18,8))`
