@@ -24,7 +24,12 @@ from PIL import Image
     # recombine back to RGB image
     new_img = Image.merge('RGB', (r, g, b))
   ```
-- set unifrom transparency : `img.putalpha(128)` # caution : it overwrites the original image
+- set unifrom transparency : `img.putalpha(128)` 
+   - # caution : it overwrites the original image / change type of the image to RGBA
+
+
+- rotate : `img.rotate(angle, resample=2, expand=True, fillcolor=(255,255,255))`
+
 
 
 - Add Text on Image ; [Official Link](https://pillow.readthedocs.io/en/stable/reference/ImageDraw.html)
