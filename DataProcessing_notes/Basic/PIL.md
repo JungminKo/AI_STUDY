@@ -25,7 +25,7 @@ from PIL import Image
     new_img = Image.merge('RGB', (r, g, b))
   ```
 - set unifrom transparency : `img.putalpha(128)` 
-   - # caution : it overwrites the original image / change type of the image to RGBA
+   - _caution_ : it overwrites the original image / change type of the image to RGBA
 
 
 - rotate : `img.rotate(angle, resample=2, expand=True, fillcolor=(255,255,255))`
