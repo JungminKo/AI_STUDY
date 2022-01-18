@@ -67,3 +67,8 @@ X = CuDNNGRU(units=num_unit, return_sequences=True)(X) # Fast GRU implementation
 import tensorflow.keras.backend as K
 K.clear_session() # useful when you're creating multiple models in succession, 
 ```
+
+### 이미지 전처리
+```Python
+tf.keras.preprocessing.image.ImageDataGenerator()
+```
