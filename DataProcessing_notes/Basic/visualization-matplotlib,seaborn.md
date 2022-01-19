@@ -28,6 +28,7 @@ rc('font',family = font_name)
 - **Create a figure and a set of subplots** : `f, ax = plt.subplots(1,2, figsize=(18,8))`
 - **Adjust the subplot layout parameters** : `plt.subplots_adjust(wspace=0.2, hspace=0.4)`
 ```Python
+### type1
 f, ax = plt.subplots(1,2, figsize=(18,8)) 
 df['col_name'].plot.bar(ax=ax[0]) 
 ax[0].set_title('graph_1', y= 1.05) # y: position of title
@@ -35,6 +36,11 @@ ax[0].set_ylabel('ylabel')
 
 ax[1].set_title('graph_2', y= 1.05)
 
+### type2
+plt.subplots(1, 2, 1)
+plt.plot(x, y)
+plt.subplots(1, 2, 2)
+plt.plot(x, y)
 ```
 
 ### pandas.DataFrame.plot
