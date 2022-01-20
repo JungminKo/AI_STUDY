@@ -1,3 +1,16 @@
+- image read/ write 
+```Python
+img = cv2.imread('lena.jpg', cv2.IMREAD_COLOR) # cv2.IMREAD_GRAYSCALE, cv2.IMREAD_UNCHANGED (alpha channel 까지 읽음)
+cv2.imwrite('lena.jpg', img)
+```
+
+- resize 
+```Python
+# 이미지를 확대할 때는 cv2.INTER_CUBIC, cv2.INTER_AREA
+# 이미지를 축소할 때는 cv2.INTER_AREA
+dst = cv2.resize(src, dsize=(640, 480), interpolation=cv2.INTER_AREA) 
+```
+
 
 - Perspective Transformation
 
