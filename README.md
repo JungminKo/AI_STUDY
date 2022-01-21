@@ -29,3 +29,7 @@
 
 ### RL
 
+
+----
+### others
+- linux
