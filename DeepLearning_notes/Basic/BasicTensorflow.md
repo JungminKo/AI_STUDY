@@ -67,6 +67,16 @@ X = CuDNNGRU(units=num_unit, return_sequences=True)(X) # Fast GRU implementation
 import tensorflow.keras.backend as K
 K.clear_session() # useful when you're creating multiple models in succession, 
 ```
+### compile
+```Python
+model.compile(optimizer="Adam", loss="mse", metrics=["mae"])
+
+optimizer = tf.keras.optimizers.Adam(lr=1e-4, beta_1=0.9, beta_2=0.999, epsilon=0.001, decay=0.0)
+model.compile(optimizer=optimizer, loss="mse", metrics=["mae"])
+
+```
+
+
 
 ### 이미지 전처리
 ```Python
