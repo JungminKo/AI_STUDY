@@ -3,6 +3,10 @@
 img = cv2.imread('lena.jpg', cv2.IMREAD_COLOR) # cv2.IMREAD_GRAYSCALE, cv2.IMREAD_UNCHANGED (alpha channel 까지 읽음)
 cv2.imwrite('lena.jpg', img)
 ```
+- convert color
+```Python
+img = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY) #cv2.COLOR_BGR2RGB
+```
 
 - resize 
 ```Python
