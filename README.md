@@ -32,4 +32,4 @@
 
 ----
 ### others
-- linux
+- [linux](https://github.com/JungminKo/AI_STUDY/blob/main/Others_notes/linux_command.md)
