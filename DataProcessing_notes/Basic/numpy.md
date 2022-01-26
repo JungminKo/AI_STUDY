@@ -6,6 +6,8 @@
 - `a*b` : a, b의 inner product
 - `np.multiply(a, b)` : a, b 의 elemenwise product
 
+- `np.cumsum(a)` : the cumulative sum of the elements along a given axis
+- `np.clip(a, a_min, a_max)` : clip (limit) the values in an array.
 
 ### to expand the dimensions
 1. np.newaxis / np.expand_dims
@@ -19,6 +21,10 @@ x[np.newaxis, :] # array([[0, 1, 2]])  # shape : (1,3)
 # np.expand_dims
 np.expand_dims(x, axis=0) # array([[0, 1, 2]])  # shape : (1,3)
 np.expand_dims(x, axis=1) # array([[0], [1], [2]])  # shape : (3,1)
+
+# np.tile
+# construct an array by repeating A the number of times given by reps
+np.tile(a, 2) # array([0, 1, 2]) -> array([0, 1, 2, 0, 1, 2])
 ```
 
 2. 축바꾸기
