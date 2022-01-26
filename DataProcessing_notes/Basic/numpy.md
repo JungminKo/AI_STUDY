@@ -6,8 +6,7 @@
 - `a*b` : a, b의 inner product
 - `np.multiply(a, b)` : a, b 의 elemenwise product
 
-- `np.cumsum(a)` : the cumulative sum of the elements along a given axis
-- `np.clip(a, a_min, a_max)` : clip (limit) the values in an array.
+
 
 ### to expand the dimensions
 1. np.newaxis / np.expand_dims
@@ -62,3 +61,6 @@ np.random.randint(low, high=None, size=None) # if high=None, 0부터 low-1까지
     - ***주의*** : index는 반환되는 tuple의 첫번째 요소이므로 [0]번째 값에 접근해야 함
     - ex. 배열 v의 값이 달라지는 부분 파악하기 : `np.where(v[:-1] != v[1:])[0]` # shape : (n, )
   - `np.where(a<4, a, 10*a)` : a<4이면 a, 아니면 10 * a로 값을 대체하여 array 반환
+
+- `np.cumsum(a)` : the cumulative sum of the elements along a given axis
+- `np.clip(a, a_min, a_max)` : clip (limit) the values in an array.
