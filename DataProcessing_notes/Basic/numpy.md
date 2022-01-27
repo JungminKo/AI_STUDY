@@ -1,4 +1,7 @@
 # numpy 주요 함수
+### mathematical functions
+- `np.clip(a, a_min, a_max)` : clip (limit) the values in an array.
+- `np.diff(a, n=1, axis=-1)` : calculate the n-th discrete difference along the given axi
 
 ### 행렬곱셈관련 함수
 - `np.dot(a, b)` : a, b의 행렬곱셈
@@ -63,4 +66,4 @@ np.random.randint(low, high=None, size=None) # if high=None, 0부터 low-1까지
   - `np.where(a<4, a, 10*a)` : a<4이면 a, 아니면 10 * a로 값을 대체하여 array 반환
 
 - `np.cumsum(a)` : the cumulative sum of the elements along a given axis
-- `np.clip(a, a_min, a_max)` : clip (limit) the values in an array.
+
