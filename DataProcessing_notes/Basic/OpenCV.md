@@ -35,3 +35,6 @@ src = cv2.warpPerspective(img, matrix, (width, height))
 transform_points = np.matmul(mtrx[:3, :2], point_array.T) + mtrx[:, 2][:,np.newaxis]
 dst_points = np.array([transform_points[0]/transform_points[2], transform_points[1]/transform_points[2]]).T
 ```
+
+- find contour : `cv2.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)`
+- find size : `cv2.contourArea(cnt)`
