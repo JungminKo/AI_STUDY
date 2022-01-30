@@ -9,6 +9,10 @@
  ```Python
  s.str.extract(r'([ab])(\d)') 
  ```
+**- to Replace each occurrence of pattern/regex in the Series/Index.**
+ ```Python
+ s.str.replace('[^가-힣A-z ]', '')
+ ```
 **- to fill NA/NaN values using the specified method** : `s.fillna(5, inplace=False)`
 
 **- to return a Series containing counts of unique values** : `s.value_counts()`
