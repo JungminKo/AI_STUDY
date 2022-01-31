@@ -114,6 +114,6 @@ def category_age(x):
           return 1
     else:
           reuturn 2
-df['col_names_cate'] = df['col_names'].apply(category_age
+df['col_names_cate'] = df['col_names'].apply(category_age)
 ```
 
