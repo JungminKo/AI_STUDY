@@ -1,7 +1,8 @@
 # numpy 주요 함수
 ### mathematical functions
 - `np.clip(a, a_min, a_max)` : clip (limit) the values in an array.
-- `np.diff(a, n=1, axis=-1)` : calculate the n-th discrete difference along the given axi
+- `np.diff(a, n=1, axis=-1)` : calculate the n-th discrete difference along the given axis
+- `np.ceil(a)`, `np.floor(a)`
 
 ### 행렬곱셈관련 함수
 - `np.dot(a, b)` : a, b의 행렬곱셈
