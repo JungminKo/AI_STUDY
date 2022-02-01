@@ -27,6 +27,11 @@ nn.Sequential(
 nn.ModuleList() 
 nn.ModuleList([nn.Linear(10, 10) for i in range(10)])
 ```
+### Basic operation
+- `torch.add(a, b)`
+- `torch.mul(a, b)`
+- `torch.dot(a, b)` : matrix multiplication
+- `torch.min(a)`, `torch.max(a)` : returns min/max and min_indices/max_indices
 
 ### reshape
 - `tensor.view(shape)` 
@@ -76,3 +81,8 @@ torch.nn.BCELoss() # BCELoss : Binary Cross Entropy Loss
 ```Python
 torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 ```
+
+### Extra
+- `torch.from_numpy(ndarray)` : Creates a Tensor from a numpy.ndarray
+- `torch.randn(shape)`: Returns a tensor filled with random numbers from a normal distribution with mean 0 and variance 1 
+- `torch.arange(start=0, end)`
