@@ -74,3 +74,4 @@ np.random.randint(low, high=None, size=None) # if high=None, 0부터 low-1까지
 
 - `np.cumsum(a)` : the cumulative sum of the elements along a given axis
 
+- `np.roll(a, shift)` : Roll array elements along a given axis, positive : back-> front, negative : front->back
