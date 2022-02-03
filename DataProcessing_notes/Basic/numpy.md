@@ -58,6 +58,7 @@ np.random.randint(low, high=None, size=None) # if high=None, 0부터 low-1까지
 ``` 
 
 ### 기타
+- `array.tolist()` : numpy 타입은 list로 변환
 - `np.int0()` : numpy 타입을 int64로 변환
 - `np.r_[]` : 배열을 왼쪽에서 오른쪽으로 붙임
   - ex. `df.iloc[:, np.r_[2, 3:5, 10]` 과 같이 dataframe의 iloc를 범위 지정해서 접근할 때 편함
