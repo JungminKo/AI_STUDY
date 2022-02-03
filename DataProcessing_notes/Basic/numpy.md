@@ -39,7 +39,13 @@ np.swapaxes(x, 0, 2) # shape : (4,3,2)
 np.swapaxes(x, 1, 2) # shape : (2,4,3)
 ```
 
-3. np.random
+3. return flattened array
+- `np.ravel(a)`/ `a.ravel()` : Return a contiguous flattened array
+- `a.reshape(-1)`
+- `np.flatten(a)` : Return **a copy** of the array collapsed into one dimension
+
+
+### np.random
 ```Python
 # Create an array of the given shape and populate it with random samples from a uniform distribution over [0, 1).
 np.random.rand(row, col)
