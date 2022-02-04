@@ -1,4 +1,4 @@
-- image read/ write 
+### image read / write 
 ```Python
 img = cv2.imread('lena.jpg', cv2.IMREAD_COLOR) # cv2.IMREAD_GRAYSCALE, cv2.IMREAD_UNCHANGED (alpha channel 까지 읽음)
 cv2.imwrite('lena.jpg', img)
@@ -33,7 +33,7 @@ ret, th = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 
 
 ```
-
+### Transformation
 
 - Perspective Transformation
 
@@ -55,6 +55,7 @@ transform_points = np.matmul(mtrx[:3, :2], point_array.T) + mtrx[:, 2][:,np.newa
 dst_points = np.array([transform_points[0]/transform_points[2], transform_points[1]/transform_points[2]]).T
 ```
 
+### FindContours
 
 - `cv2.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)` : find_contour [pactice](https://github.com/JungminKo/AI_STUDY/blob/main/Others_notes/FindRect_Practice.md)
   - return : image, contours, hierarchy     
