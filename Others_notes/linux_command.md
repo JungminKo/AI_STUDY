@@ -16,3 +16,9 @@
 ###
 - Nvidia GPUs usage monnitoring : `nvidia-smi`
 - Nvidia GPUs usage monnitoring for every second : `watch -d -n 1 nvidia-smi`
+
+###
+- zip zip : `zip a.zip -r ./*`
+- unzip zip : `unzip a.zip -d ./target`
+- zip tar : `tar -cvf a.tar`
+- unzip tar : `tar -xvf a.tar`
