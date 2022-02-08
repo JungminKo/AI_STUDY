@@ -24,6 +24,7 @@
 
 ### Computer Vision
 - object detection
+- image segmentation
 
 ### NLP
 
