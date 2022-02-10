@@ -66,3 +66,6 @@ dst_points = np.array([transform_points[0]/transform_points[2], transform_points
 - `cv2.contourArea(contour)` : find size 
 
 - `cv2.boxPoints(rect)` : Finds the four vertices of a rotated rect 
+
+### Extra
+- `cv2.Laplacian(image, cv2.CV_64F).var()` : blur detection
