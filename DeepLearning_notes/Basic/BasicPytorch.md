@@ -75,6 +75,8 @@ nn.ModuleList([nn.Linear(10, 10) for i in range(10)])
 ```Python
 torch.nn.BCELoss() # BCELoss : Binary Cross Entropy Loss
 
+loss_function = torch.nn.CrossEntropyLoss() 
+loss = loss_function(logits, target) # logits must not be the result of softmax
 ```
 
 ### Optimizer
