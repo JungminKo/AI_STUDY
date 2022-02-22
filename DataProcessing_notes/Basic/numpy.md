@@ -12,7 +12,7 @@
 
 
 
-### to expand the dimensions
+### change array shape
 1. np.newaxis / np.expand_dims
 ```Python
 x = np.arange(3) # array([0, 1, 2]) # shape : (3,)
@@ -30,16 +30,26 @@ np.expand_dims(x, axis=1) # array([[0], [1], [2]])  # shape : (3,1)
 np.tile(a, 2) # array([0, 1, 2]) -> array([0, 1, 2, 0, 1, 2])
 ```
 
-2. 축바꾸기
+2. np.squeeze
+```Python
+# Remove axes of length one from x
+x = np.arange(12).reshape(1,3,2,2)
+x = np.squeeze(x) # shape : (1,3,2,2) -> (3,2,2)
+```
+
+3. 축바꾸기
 ```Python
 x = np.arange(24).reshape(2,3,4)
 np.transpose(x) # x.T # shape : (4,3,2)
 np.swapaxes(x, 0, 1) # shape : (3,2,4)
 np.swapaxes(x, 0, 2) # shape : (4,3,2)
 np.swapaxes(x, 1, 2) # shape : (2,4,3)
+
+##Image
+image = image.transpose(2,0,1) # (224, 224, 3) -> (3, 224, 224)
 ```
 
-3. return flattened array
+4. return flattened array
 - `np.ravel(a)`/ `a.ravel()` : Return a contiguous flattened array
 - `a.reshape(-1)`
 - `np.flatten(a)` : Return **a copy** of the array collapsed into one dimension
