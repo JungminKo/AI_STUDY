@@ -26,3 +26,9 @@ def str2bool(v):
         raise argparse.ArgumentTypeError('Boolean value expected.') 
         
 ```
+
+### random
+- `random.randint(0, 2)` : return an integer number / both included
+- `random.uniform(0, 1)` : return a random floating number / both included
+- `random.choice(list)` : return a random element from a list
+- `random.choices(list, weights=[1,2,3], k=1)` : return a list
