@@ -33,4 +33,6 @@
 
 ----
 ### others
+- [BasicPython](https://github.com/JungminKo/AI_STUDY/edit/main/Others_notes/BasicPythonLibrary.md)
+  - os, shutil, argparse, random 
 - [linux](https://github.com/JungminKo/AI_STUDY/blob/main/Others_notes/linux_command.md)
