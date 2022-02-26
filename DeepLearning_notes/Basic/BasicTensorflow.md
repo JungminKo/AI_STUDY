@@ -76,6 +76,14 @@ model.compile(optimizer=optimizer, loss="mse", metrics=["mae"])
 
 ```
 
+## Dataset
+### tf.data.Dataset
+- supports writing descriptive and efficient input pipelines
+```Python
+batch_size=32
+dataset = tf.data.Dataset.from_tensor_slices(x_train).shuffle(1000)
+dataset = dataset.batch(batch_size, drop_remainder=True).prefetch(1)
+```
 
 
 ### 이미지 전처리
