@@ -6,7 +6,7 @@
 
 ### 
 - copy directory to another directory : `cp -r dir1/ dir2/`
-
+- move directory to another directory : `mv dir/ dir2/`, `mv dir/* dir/2`
 
 ### 
 - count number of directories in current directory : `ls -l | grep ^d | wc -l`
