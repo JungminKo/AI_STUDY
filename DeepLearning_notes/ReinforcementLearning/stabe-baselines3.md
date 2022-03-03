@@ -19,3 +19,24 @@ eval_callback = EvalCallback(eval_env, best_model_save_path='./logs/',
                              deterministic=True, render=False)
 model.learn(time_step, callback=eval_callback)
 ```
+## RL algorithms
+### A2C
+```Python
+from stable_baselines3.a2c import A2C
+policy_kwargs = dict(activation_fn=torch.nn.Sigmoid,
+                net_arch=[64, 128, 256, dict(pi=[32], vf=[32])])
+model = A2C('MlpPolicy', env=env, verbose=0, policy_kwargs=policy_kwargs, learning_rate=0.0001)
+model.learn(time_step, callback=eval_callback)
+model.save('2048_a2c')                
+```
+
+### DQN
+```Python
+from stable_baselines3 import DQN
+policy_kwargs = dict(activation_fn=torch.nn.Sigmoid,
+                net_arch=[64, 128, 256])
+model = DQN('MlpPolicy', env=env, 
+        verbose=0, policy_kwargs=policy_kwargs, learning_rate=0.00001)
+model.learn(time_step, callback=eval_callback)
+model.save('2048_dqn')            
+```
