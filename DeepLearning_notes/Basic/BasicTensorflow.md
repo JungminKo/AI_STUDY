@@ -30,7 +30,7 @@ tf.gather(params, indices) # tensor params를 indices에 맞게 slicing
 from tensorflow.keras.callbacks import ModelCheckpoint
 from tensorflow.keras.models import Model, load_model, Sequential
 from tensorflow.keras.layers import Dense, Activation, Dropout, Input, Reshape, Add, concatenate 
-from tensorflow.keras.layers import Conv1D, Conv2D, Flatten, BatchNormalization
+from tensorflow.keras.layers import Conv1D, Conv2D, Flatten, BatchNormalization, Conv2DTranspose
 from tensorflow.keras.layers import AveragePooling2D, MaxPooling2D, ZeoPadding2Ds
 from tensorflow.keras.layers import Masking, TimeDistributed, LSTM, GRU, CuDNNGRU, Bidirectional
 from tensorflow.keras.optimizers import Adam
@@ -45,6 +45,9 @@ X = Dropout(rate=dropout_rate)(X)
 
 X = Conv2D(filters, kernel_size, strides=(1, 1), padding='valid', activation=None)(X) 
 # padding = 'valid' or 'same'
+
+# Conv2DTranspose : upsampling
+X = Conv2DTranspose(filters, kernel_size, strides=(1, 1), padding='same', activation = None)(X)
 
 X = BatchNormalization(axis=-1, momentum=0.99, epsilon=0.001)(X)
 
