@@ -67,5 +67,14 @@ dst_points = np.array([transform_points[0]/transform_points[2], transform_points
 
 - `cv2.boxPoints(rect)` : Finds the four vertices of a rotated rect 
 
+
+### Corner Detection
+- Harris Corner Detection
+```Python
+corner = cv.cornerHarris(gray,2,3,0.04)
+coord = np.where(corner > 0.5* corner.max())
+coord = np.stack((coord[1], coord[0]), axis=-1)
+```
+
 ### Extra
 - `cv2.Laplacian(image, cv2.CV_64F).var()` : blur detection
