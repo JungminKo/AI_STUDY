@@ -13,7 +13,7 @@
 ## Machine Learning (except Deep Learning)
 ### Basic-ML
 - **summary** about _commonly used_ functions in machine learning
-
+  - [sklearn](https://github.com/JungminKo/AI_STUDY/blob/main/MachineLearning_notes/Basic/scikit-learn.md)
 
 ## Deep Learning
 ### Basic-DL
