@@ -76,5 +76,15 @@ coord = np.where(corner > 0.5* corner.max())
 coord = np.stack((coord[1], coord[0]), axis=-1)
 ```
 
+###  labeling method
+- `cv2.connectedComponents(image)` 
+    - computes the connected components labeled image of boolean image
+    - return : retval, labels
+- `cv2.connectedComponentsWithStats(image)` 
+    - computes the connected components labeled image of boolean image and also produces a statistics output for each label
+    - return : retval, labels, stats, centroids
+
+
 ### Extra
 - `cv2.Laplacian(image, cv2.CV_64F).var()` : blur detection
+
