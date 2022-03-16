@@ -81,7 +81,18 @@ loss = loss_function(logits, target) # logits must not be the result of softmax
 
 ### Optimizer
 ```Python
-torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+```
+
+### training
+```Python
+optimizer.zero_grad() # set all of the gradients to zero
+
+loss = torch.nn.BCELoss() # calculate the loss
+
+loss.backward() # calculate the gradients with respect to the loss
+optimzer.step() # update the parameters being optimized
 ```
 
 ### Extra
