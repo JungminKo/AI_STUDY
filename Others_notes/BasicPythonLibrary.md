@@ -3,6 +3,9 @@
 - `os.path.join(path, *path)` : Join one or more path components intelligently
 - `os.makedirs(path, exist_ok=True)`
 
+### sys
+- `sys.path.append("path")` : to add a specific path for an interpreter to search
+
 ### shutil
 
 
