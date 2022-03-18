@@ -75,16 +75,16 @@ np.random.randint(low, high=None, size=None) # if high=None, 0부터 low-1까지
   - ex. `df.iloc[:, np.r_[2, 3:5, 10]` 과 같이 dataframe의 iloc를 범위 지정해서 접근할 때 편함
 
 - **`array.ndim`** : return The number of dimensions 
-- `np.argwhere(condition)` : 조건(condition)에 맞는 인덱스 모두 반환 
+- **`np.argwhere(condition)`** : 조건(condition)에 맞는 인덱스 모두 반환 
   - ex. 배열 v의 값이 달라지는 부분 파악하기 : `np.argwhere(v[:-1] != v[1:])`  # shape: (n, 1)
   
-- `np.where(condition, x, y)`: 조건(condition)에 맞는 인덱스 모두 반환
+- **`np.where(condition, x, y)`**: 조건(condition)에 맞는 인덱스 모두 반환
   - `np.argwhere`처럼 condition만 주어질 수도 있음
     - 그러면 `np.asarray(condition).nonzero()` 로 사용되는 것이 좋음
     - ***주의*** : index는 반환되는 tuple의 첫번째 요소이므로 [0]번째 값에 접근해야 함
     - ex. 배열 v의 값이 달라지는 부분 파악하기 : `np.where(v[:-1] != v[1:])[0]` # shape : (n, )
   - `np.where(a<4, a, 10*a)` : a<4이면 a, 아니면 10 * a로 값을 대체하여 array 반환
 
-- `np.cumsum(a)` : the cumulative sum of the elements along a given axis
+- **`np.cumsum(a)`** : the cumulative sum of the elements along a given axis
 
-- `np.roll(a, shift)` : Roll array elements along a given axis, positive : back-> front, negative : front->back
+- **`np.roll(a, shift)`** : Roll array elements along a given axis, positive : back-> front, negative : front->back
