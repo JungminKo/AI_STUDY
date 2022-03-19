@@ -8,26 +8,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print('Using device:', device) # >>> 'cuda'
 ```
 
-### 
-
-```Python
-import torch
-import torch.nn as nn
-
- # A sequential container. Modules will be added to it in the order they are passed in the constructor
-nn.Sequential()
-nn.Sequential(
-          nn.Conv2d(1,20,5),
-          nn.ReLU(),
-          nn.Conv2d(20,64,5),
-          nn.ReLU()
-        )
- 
-# Holds submodules in a list.
-nn.ModuleList() 
-nn.ModuleList([nn.Linear(10, 10) for i in range(10)])
-```
-### Basic operation
+## Basic operation
 - `torch.add(a, b)`
 - `torch.mul(a, b)`
 - `torch.dot(a, b)` : matrix multiplication
@@ -44,8 +25,8 @@ nn.ModuleList([nn.Linear(10, 10) for i in range(10)])
 - `torch.roll()`  
   - Roll the tensor along the given dimension(s). 
   - Elements that are shifted beyond the last position are re-introduced at the first position. 
-  
-### Dataset, DataLoader
+
+## Dataset, DataLoader
 - `torch.utils.data.Dataset` : sample과 label을 저장
 - `torch.utils.data.DataLoader` : sample에 쉽게 접근할 수 있도록 iterable 하게 만듦
 
@@ -70,12 +51,34 @@ nn.ModuleList([nn.Linear(10, 10) for i in range(10)])
            
            return image, label
    ```
+
+## torch.nn
+
+```Python
+import torch.nn as nn
+
+ # A sequential container. Modules will be added to it in the order they are passed in the constructor
+nn.Sequential(
+          nn.Conv2d(1,20,5),
+          nn.ReLU(),
+          nn.Conv2d(20,64,5),
+          nn.ReLU()
+        )
+ 
+# Holds submodules in a list.
+nn.ModuleList() 
+nn.ModuleList([nn.Linear(10, 10) for i in range(10)])
+```
+- `nn.cov2d(in_channels, out_channels, kernel_size, stride=1, padding=0)`
+- `nn.BatchNorm2d(num_fatures)`
+
+
    
 ### Loss
 ```Python
-torch.nn.BCELoss() # BCELoss : Binary Cross Entropy Loss
+nn.BCELoss() # BCELoss : Binary Cross Entropy Loss
 
-loss_function = torch.nn.CrossEntropyLoss() 
+loss_function = nn.CrossEntropyLoss() 
 loss = loss_function(logits, target) # logits must not be the result of softmax
 ```
 
@@ -89,7 +92,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 ```Python
 optimizer.zero_grad() # set all of the gradients to zero
 
-loss = torch.nn.BCELoss() # calculate the loss
+loss = nn.BCELoss() # calculate the loss
 
 loss.backward() # calculate the gradients with respect to the loss
 optimzer.step() # update the parameters being optimized
