@@ -71,6 +71,7 @@ nn.ModuleList([nn.Linear(10, 10) for i in range(10)])
 ```
 - `nn.cov2d(in_channels, out_channels, kernel_size, stride=1, padding=0)`
 - `nn.BatchNorm2d(num_fatures)`
+- `nn.Sigmoid()`, `nn.ReLU(inplace=False)`, `nn.LeakyReLu(negative_slope=0.01, inplace=False)`
 
 
    
