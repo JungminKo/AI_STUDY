@@ -69,7 +69,7 @@ nn.Sequential(
 nn.ModuleList() 
 nn.ModuleList([nn.Linear(10, 10) for i in range(10)])
 ```
-- `nn.cov2d(in_channels, out_channels, kernel_size, stride=1, padding=0)`
+- `nn.Conv2d(in_channels, out_channels, kernel_size, stride=1, padding=0)`
 - `nn.BatchNorm2d(num_fatures)`
 - `nn.Sigmoid()`, `nn.ReLU(inplace=False)`, `nn.LeakyReLu(negative_slope=0.01, inplace=False)`
 
@@ -77,11 +77,12 @@ nn.ModuleList([nn.Linear(10, 10) for i in range(10)])
    
 ### Loss
 ```Python
-nn.BCELoss() # BCELoss : Binary Cross Entropy Loss
-
 loss_function = nn.CrossEntropyLoss() 
 loss = loss_function(logits, target) # logits must not be the result of softmax
 ```
+- `nn.BCELoss()` # BCELoss : Binary Cross Entropy Loss
+- `nn.BCEWithLogitsLoss()` : combines a Sigmoid layer and the BCELoss in one single class
+- `nn.CrossEntropyLoss()`
 
 ### Optimizer
 ```Python
