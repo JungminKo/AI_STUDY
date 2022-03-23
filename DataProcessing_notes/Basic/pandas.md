@@ -11,7 +11,7 @@
  ```
 **- to Replace each occurrence of pattern/regex in the Series/Index.**
  ```Python
- s.str.replace('[^가-힣A-z ]', '')
+ s.str.replace('[^가-힣A-z ]', '', regex=True)
  ```
 **- to fill NA/NaN values using the specified method** : `s.fillna(5, inplace=False)`
 
