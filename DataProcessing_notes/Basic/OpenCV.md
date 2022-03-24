@@ -33,6 +33,9 @@ ret, th = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 
 
 ```
+### Rotation
+- `cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)` # CV2.ROTATE_180, CV2.ROTATE_90_COUNTERCLOCKWISE
+
 ### Transformation
 
 - Perspective Transformation
