@@ -60,6 +60,7 @@ msno.bar(df=df, figsize=(8, 8), color=(0.8, 0.5, 0.2)) # 전체 개수 중 몇 %
 ```Python
 df.drop('index', axis=0, inplace=False) # drop row 
 df.drop('col_name', axis=1) # drop column # can put a list to drop columns
+df.drop(['col_name1', 'col_name2'], axis=1)
 ```
 
 **- to select a subset of the DataFrame’s columns based on the column dtypes**
@@ -113,7 +114,7 @@ def category_age(x):
     elif x<20:
           return 1
     else:
-          reuturn 2
+          return 2
 df['col_names_cate'] = df['col_names'].apply(category_age)
 ```
 
