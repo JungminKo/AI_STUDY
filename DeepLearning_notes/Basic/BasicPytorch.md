@@ -65,6 +65,10 @@ nn.Sequential(
           nn.ReLU()
         )
  
+# another way
+model = nn.Sequential()
+model.add_module(layer_name,layer)
+ 
 # Holds submodules in a list.
 nn.ModuleList() 
 nn.ModuleList([nn.Linear(10, 10) for i in range(10)])
@@ -74,8 +78,20 @@ nn.ModuleList([nn.Linear(10, 10) for i in range(10)])
 - `nn.BatchNorm2d(num_fatures)`
 - `nn.Sigmoid()`, `nn.ReLU(inplace=False)`, `nn.LeakyReLu(negative_slope=0.01, inplace=False)`, `nn.Tanh()`
 
+### torch.nn.init
+```Python
+import torch.nn.init as init
+x = init.uniform_(tensor, a=0.0, b=1.0)
+x = init.normal_(tensor, mean=0.0, std=1.0)
+x = init.xavier_uniform_(tensor, gain=1.0)
+```
+### pretrained_models
+```Python
+# https://pytorch.org/vision/stable/models.html
+import torchvision.models as models
+resnet18 = models.resnet18(pretrained=True)
 
-   
+```
 ### Loss
 ```Python
 loss_function = nn.CrossEntropyLoss() 
