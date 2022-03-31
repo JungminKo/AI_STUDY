@@ -121,3 +121,4 @@ optimzer.step() # update the parameters being optimized
 - `torch.from_numpy(ndarray)` : Creates a Tensor from a numpy.ndarray
 - `torch.randn(shape)`: Returns a tensor filled with random numbers from a normal distribution with mean 0 and variance 1 
 - `torch.arange(start=0, end)`
+- `torch.nn.functional.interpolate(input, size=None)` : Down/up samples the input to either the given size or the given scale_factor
