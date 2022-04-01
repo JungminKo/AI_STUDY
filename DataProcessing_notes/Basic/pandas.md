@@ -70,6 +70,7 @@ df.select_dtypes(include='number')
 df.select_dtypes(include='datetime') # 끝에 .columns을 붙이면 해당하는 column을 뽑아낼 수 있음 
 ```
 
+- `df.dropna(axis=0)` : Remove missing values (axis=0 : index, axis=1 : columns)
 
 **- to save csv with korean**  
 ```Python
@@ -118,3 +119,5 @@ def category_age(x):
 df['col_names_cate'] = df['col_names'].apply(category_age)
 ```
 
+- `df.loc['index_name','col_name]` : Purely label-location based indexer for selection by label
+- `df.iloc[index_num, col_num]` : Purely integer-location based indexing for selection by position.
