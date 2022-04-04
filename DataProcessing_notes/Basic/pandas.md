@@ -13,9 +13,12 @@
  ```Python
  s.str.replace('[^가-힣A-z ]', '', regex=True)
  ```
+**- to check whether all characters in each string are digits** : `s.str.isdigit()`
+
 **- to fill NA/NaN values using the specified method** : `s.fillna(5, inplace=False)`
 
 **- to return a Series containing counts of unique values** : `s.value_counts()`
+
 
 
 #  Dataframe
