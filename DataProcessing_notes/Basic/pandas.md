@@ -68,6 +68,10 @@ df.drop(['col_name1', 'col_name2'], axis=1)
 
 **- to select a subset of the DataFrame’s columns based on the column dtypes**
 ```Python
+# select columns
+df.columns[df.dtypes == object]
+
+# select data
 df.select_dtypes(include='object') # parameters : include, exclude 
 df.select_dtypes(include='number')
 df.select_dtypes(include='datetime') # 끝에 .columns을 붙이면 해당하는 column을 뽑아낼 수 있음 
