@@ -5,7 +5,8 @@ from PIL import Image
 - `Image.open("Image.jpg")`
 - `Image.new("L", (width, height))` # RGB : color, L : grayscale
 - `img.size` # (600, 400)
-- 
+- `img.save('./output.png', 'png')`
+
 - Convert pillow Image to numpy array  or numpy array to pillow Image
   - `np.array(img)` # pillow Image to numpy array
   - `Image.fromarray(img_array)` # numpy array to pillow Image
