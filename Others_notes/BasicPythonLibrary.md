@@ -35,3 +35,9 @@ def str2bool(v):
 - `random.uniform(0, 1)` : return a random floating number / both included
 - `random.choice(list)` : return a random element from a list
 - `random.choices(list, weights=[1,2,3], k=1)` : return a list
+
+### requirements
+- `pip freeze > requirements.txt` : export requirements
+- `pip install -r requirements.txt` : install requirements
+- `conda list --export > requirements.txt` : export requirements (conda)
+- `conda install --file requirements.txt` : install requirements (conda) 
