@@ -41,3 +41,7 @@ def str2bool(v):
 - `pip install -r requirements.txt` : install requirements
 - `conda list --export > requirements.txt` : export requirements (conda)
 - `conda install --file requirements.txt` : install requirements (conda) 
+
+### warnings
+- `warnings.filterwarnings(action='ignore')` 
+- `warnings.filterwarnings(action='default')` : show warnings
